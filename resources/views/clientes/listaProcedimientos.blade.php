@@ -19,7 +19,7 @@
                         <td>Juan Caceres</td>
                         <td>Samsung Galaxy S22</td>
                         <td>06-09</td>
-                        <td>El celular se recibió con la pantalla rallada y la carcasa rota por detras.</td>
+                        <td>El celular se recibió con la pantalla rayada y la carcasa rota por detras.</td>
                     </tr>
                 </tbody>
             </table>
