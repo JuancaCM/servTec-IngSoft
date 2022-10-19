@@ -19,7 +19,12 @@ return new class extends Migration
         Schema::create('procedimientos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->date('retirado');
             $table->text('comentario');
+            $table->integer('valor');
+            $table->integer('abono');
+            $table->text('clave');
+
             $table->foreignIdFor(Equipo::class)->constrained();
             $table->foreignIdFor(Usuario::class)->constrained();
             $table->foreignIdFor(Estado::class)->constrained();
