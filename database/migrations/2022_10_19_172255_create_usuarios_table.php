@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->text('nombre');
             $table->text('password');
-            $table->text('correo');
+            $table->string('correo')->unique();
             $table->foreignIdFor(Rol::class)->constrained();
         });
     }
