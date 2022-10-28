@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('base');
 });
 
-Route::get('/registro', function () {
-    return view('clientes/registroClientes');
-});
+Route::get('/registro',[ClienteController::class, 'formulario']);
+Route::post('/registro',[ClienteController::class, 'guardar']);
 
 Route::get('/login', function () {
     return view('login');

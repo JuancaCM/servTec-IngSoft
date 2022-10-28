@@ -23,14 +23,24 @@
 
                 <div class="form-label mb-3">
                     <span class="text" </span>
+                        <input name="rut" type="text" class="form-control" placeholder="Rut" aria-label="Rut"
+                            aria-describedby="basic-addon1">
+                </div>
+
+                <div class="form-label mb-3">
+                    <span class="text" </span>
                         <input name="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
                             aria-describedby="basic-addon1">
                 </div>
 
                 <div class="form-label mb-3">
                     <span class="text" </span>
-                        <input name="phone" type="text" class="form-control" placeholder="Telefono"
-                            aria-label="Telefono" aria-describedby="basic-addon1">
+                        <input name="contacto" type="text" class="form-control" placeholder="Telefono"
+                            aria-label="Contacto" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input name="correo" type="email" class="form-control" placeholder="Correo" aria-label="Correo">
                 </div>
 
                 <div class="mb-3">

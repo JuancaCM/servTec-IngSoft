@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('rut')->unique();
-            $table->text('nombre');            
+            $table->text('nombre');
             $table->text('contacto');
             $table->text('correo');
             $table->timestamps();
