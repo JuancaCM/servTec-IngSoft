@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\authController;
 
 Route::get('/', function () {
     return view('base');
@@ -10,9 +11,9 @@ Route::get('/', function () {
 Route::get('/registro',[ClienteController::class, 'formulario']);
 Route::post('/registro',[ClienteController::class, 'guardar']);
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login',[authController::class,'login']);
+Route::post('/login',[authController::class,'loginUser']);
+
 
 Route::get('/procedimientos', function () {
     return view('clientes/listaProcedimientos');
@@ -21,3 +22,8 @@ Route::get('/procedimientos', function () {
 Route::get('/clientes', function () {
     return view('clientes/listaClientes');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
