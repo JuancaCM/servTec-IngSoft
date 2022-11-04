@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
@@ -45,4 +46,11 @@ class ClienteController extends Controller
             return back()->with('insert', false);
         }
     }
+=======
+use Illuminate\Routing\Controller;
+
+class ClienteController extends Controller
+{
+
+>>>>>>> 7df469a (Login y otros)
 }
