@@ -14,13 +14,16 @@ Route::post('/registro',[ClienteController::class, 'guardar']);
 Route::get('/login',[authController::class,'login']);
 Route::post('/login',[authController::class,'loginUser']);
 
+Route::get('/registroProcedimientos', function () {
+    return view('clientes.registroProcedimientos');
+});
 
 Route::get('/procedimientos', function () {
-    return view('clientes/listaProcedimientos');
+    return view('clientes.listaProcedimientos');
 });
 
 Route::get('/clientes', function () {
-    return view('clientes/listaClientes');
+    return view('clientes.listaClientes');
 });
 
 Route::get('/dashboard', function () {
