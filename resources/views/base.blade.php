@@ -10,6 +10,12 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.js"></script>
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -180,7 +186,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <i class="bi bi-person-fill"> {{session()->get('nombre')}}</i>
+                                <i class="bi bi-person-fill"> {{ session()->get('nombre') }}</i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                                 <li><a class="dropdown-item" href="#">Perfil</a></li>
@@ -199,8 +205,9 @@
                 <div class="position-sticky pt-3 sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/dashboard">
+                            <a class="nav-link" aria-current="page" href="/dashboard">
                                 <span data-feather="home" class="align-text-bottom"></span>
+                                <i class="bi bi-speedometer2"></i>
                                 Dashboard
                             </a>
                         </li>
@@ -208,6 +215,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/clientes">
                                 <span data-feather="file" class="align-text-bottom"></span>
+                                <i class="bi bi-people-fill"></i>
                                 Lista de clientes
                             </a>
                         </li>
@@ -215,22 +223,30 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/registro">
                                 <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                                <i class="bi bi-person-plus-fill"></i>
                                 Registrar cliente
                             </a>
                         </li>
+
+                        @if (session()->get('id') == 1)
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span data-feather="users" class="align-text-bottom"></span>
+                                    <i class="bi bi-bar-chart-fill"></i>
+                                    Estadísticas
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+                                    <i class="bi bi-gear-fill"></i>
+                                    Administración
+                                </a>
+                            </li>
+                        @endif
+
                         <!--
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="users" class="align-text-bottom"></span>
-                                Customers
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-                                Reports
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="layers" class="align-text-bottom"></span>

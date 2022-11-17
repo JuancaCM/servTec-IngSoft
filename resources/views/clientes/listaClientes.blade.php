@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="card mt-5 col-md-8  shadow">
+        <div class="card mt-5 col-md-8 shadow">
             <div class="card-body">
-                <table class="table table-striped">
+                <table id='Tabla1' class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Nombre cliente</th>
@@ -24,9 +24,15 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href='{{ url()->previous() }}' class="btn btn-primary">Atrás</a>
-                </div>
             </div>
         </div>
+        <script>
+            $(document).ready(function() {
+                $('#Tabla1').DataTable({
+                    language: {
+                        url: 'https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-CL.json'
+                    }
+                });
+            });
+        </script>
     @endsection
