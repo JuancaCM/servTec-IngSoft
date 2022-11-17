@@ -206,18 +206,19 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="clientes">
+                            <a class="nav-link" href="/clientes">
                                 <span data-feather="file" class="align-text-bottom"></span>
                                 Lista de clientes
                             </a>
                         </li>
-                        <!--
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/registro">
                                 <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                                Products
+                                Registrar cliente
                             </a>
                         </li>
+                        <!--
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="users" class="align-text-bottom"></span>
