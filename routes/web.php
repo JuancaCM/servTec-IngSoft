@@ -20,9 +20,8 @@ Route::middleware([Middleware::class])->group( function () {
         return view('clientes.listaProcedimientos');
     });
 
-    Route::get('/clientes', function () {
-        return view('clientes.listaClientes');
-    });
+
+    Route::get('/clientes', [ClienteController::class,'showClients']);
 
     Route::get('/dashboard', [DashboardController::class,'getDashboard']);
 

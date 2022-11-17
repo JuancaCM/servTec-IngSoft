@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
+    function equipo(){
+        return $this->hasMany(Equipo::class);
+    }
 }

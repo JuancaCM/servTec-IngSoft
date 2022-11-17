@@ -9,14 +9,21 @@ use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
-    public function formulario(){
+    public function formulario()
+    {
         return view('clientes.registroClientes');
+    }
+
+    public function showClients()
+    {
+        $clientes = Cliente::all();
+        return view('clientes.listaClientes',compact('clientes'));
     }
 
     public function guardar(Request $req)
     {
         DB::beginTransaction();
-        try{
+        try {
             $rut = $req->input('rut');
             $name = $req->input('name');
             $contacto = $req->input('contacto');
@@ -24,7 +31,7 @@ class ClienteController extends Controller
 
             $user = new Usuario();
             $user->rut = $rut;
-            $user-> pass = bcrypt('1234');
+            $user->pass = bcrypt('1234');
             $user->name = $name;
             $user->contacto = $contacto;
             $user->correo = $correo;
@@ -39,8 +46,7 @@ class ClienteController extends Controller
             DB::commit();
 
             return back()->with('insert', true);
-
-        }   catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             DB::rollback();
             return back()->with('insert', false);
         }
