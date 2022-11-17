@@ -17,7 +17,7 @@ class ClienteController extends Controller
     public function showClients()
     {
         $clientes = Cliente::all();
-        return view('clientes.listaClientes',compact('clientes'));
+        return view('clientes.listaClientes', compact('clientes'));
     }
 
     public function guardar(Request $req)
@@ -29,20 +29,13 @@ class ClienteController extends Controller
             $contacto = $req->input('contacto');
             $correo = $req->input('correo');
 
-            $user = new Usuario();
+            $user = new Cliente();
             $user->rut = $rut;
-            $user->pass = bcrypt('1234');
-            $user->name = $name;
+            $user->nombre = $name;
             $user->contacto = $contacto;
             $user->correo = $correo;
-            $user->role_id = 2;
 
             $user->save();
-            $userId = $user->id;
-
-            $cliente = new Cliente();
-            $cliente->save();
-
             DB::commit();
 
             return back()->with('insert', true);
