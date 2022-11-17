@@ -3,6 +3,10 @@
 @section('content')
     <div class="container mt-4">
         <h1 class="display-6">Tecnología SC - Dashboard</h1>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href='registroProcedimientos' class="btn btn-primary">Nueva orden</a>
+        </div>
         <table class="table mt-3">
             <thead>
                 <tr>
@@ -47,7 +51,7 @@
                             </ul>
                         </td>
                         <td>
-                            <a href='dashboard/{{$p->id}}' class="btn btn-outline-warning">Detalle</a>
+                            <a href='dashboard/{{ $p->id }}' class="btn btn-outline-warning">Detalle</a>
                         </td>
                         <td>
                             <button type="button" class="btn btn-outline-dark">Ticket</button>

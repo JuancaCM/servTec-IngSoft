@@ -10,6 +10,14 @@
                 <tbody>
                     <tr>
                         <th>
+                            Fecha:
+                        </th>
+                        <td>
+                            {{ $procedimiento->created_at }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             Nombre:
                         </th>
                         <td>
@@ -106,23 +114,54 @@
                     </tr>
                     <tr>
                         <th>
-                            Clave:
-                        </th>
-                        <td>
-                            {{ $procedimiento->clave }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            Comentario:
+                            Reparación:
                         </th>
                         <td>
                             {{ $procedimiento->comentario }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            Fecha de retiro:
+                        </th>
+                        <td>
+                            {{ $procedimiento->retirado }}
+                        </td>
+                    </tr>
 
                 </tbody>
             </table>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href='{{ url()->previous() }}' class="btn btn-primary">Atrás</a>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarCampos">
+                    Editar
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="editarCampos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar orden de trabajo N° :
+                                {{ $procedimiento->id }}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!--
+                                    AÑADIR FORMULARIO
+                                -->
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
