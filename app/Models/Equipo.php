@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipo extends Model
 {
+
     use HasFactory;
+    function cliente(){
+        return $this->belongsTo(Cliente::class);
+    }
 }
