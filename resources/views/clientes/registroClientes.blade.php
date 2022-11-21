@@ -3,12 +3,11 @@
 @section('content')
     <div class="card mt-3 col-md-4 offset-md-4 border-left-primary shadow">
         <div class="card-body ">
-
             @if (null != session('insert') && session('insert'))
                 <div class="alert alert-success text-center">
                     Cliente registrado en la base de datos
                 </div>
-            @elseif (null != session('insert') && !session('insert'))
+            @elseif (null != session('errorInsert') && session('errorInsert'))
                 <div class="alert alert-danger text-center">
                     Ha ocurrido un error al registrar al cliente
                 </div>
@@ -22,20 +21,17 @@
                 </div>
 
                 <div class="form-label mb-3">
-                    <span class="text" </span>
-                        <input name="rut" type="text" class="form-control" placeholder="Rut" aria-label="Rut"
-                            aria-describedby="basic-addon1">
+                         <input name="rut" type="text" class="form-control" id="rut" placeholder="Rut"
+                            aria-label="Rut" aria-describedby="basic-addon1" required>
                 </div>
 
                 <div class="form-label mb-3">
-                    <span class="text" </span>
                         <input name="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
                             aria-describedby="basic-addon1">
                 </div>
 
                 <div class="form-label mb-3">
-                    <span class="text" </span>
-                        <input name="contacto" type="text" class="form-control" placeholder="Telefono"
+                        <input name="contacto" type="number" class="form-control" placeholder="Telefono"
                             aria-label="Contacto" aria-describedby="basic-addon1">
                 </div>
 
