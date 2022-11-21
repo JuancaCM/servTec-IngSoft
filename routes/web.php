@@ -37,3 +37,6 @@ Route::get('/', function () {
 
 Route::get('/login', [authController::class, 'login']);
 Route::post('/login', [authController::class, 'loginUser']);
+Route::get('/seguimiento', function () {
+    return view('/publico/seguimiento');
+});
