@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a href='{{ url()->previous() }}' class="btn btn-primary">Atrás</a>
+                        <a href='/clientes' class="btn btn-primary">Atrás</a>
                         <button class="btn btn-primary" type="submit">Actualizar</button>
                     </div>
                 </div>
