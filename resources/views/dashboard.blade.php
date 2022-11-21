@@ -41,9 +41,8 @@
                                     {{ $p->valor }}
                                 </td>
                                 <td class="align-middle">
-
-                                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <button type="button" class="btn btn-danger dropdown-toggle " data-bs-toggle="dropdown"
+                                        aria-expanded="false" style='width:100%' data-bs-offset="100,5">
                                         {{ $p->estado->estado }}
                                     </button>
                                     <ul class="dropdown-menu">
@@ -53,7 +52,7 @@
                                     </ul>
                                 </td>
                                 <td class="align-middle">
-                                    <a href='dashboard/{{ $p->id }}' class="btn btn-outline-warning">Detalle</a>
+                                    <a href='dashboard/ot={{ $p->id }}' class="btn btn-outline-warning">Detalle</a>
                                 </td>
                                 <td class="align-middle">
                                     <button type="button" class="btn btn-outline-dark">Ticket</button>
