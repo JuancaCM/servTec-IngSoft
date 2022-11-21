@@ -8,6 +8,7 @@
     <title>Tecnología SC - Sistema de registro vBeta 0.1.2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    {{-- <link rel="stylesheet" href="https://bootswatch.com/5/litera/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -304,14 +305,13 @@
                     $("input#rut").rut();
                     $("input#rut").keyup(function(e) {
                         var istrue = $.validateRut($(this).val(), null, {
-                            minimumLength: 7
+                            minimumLength: 8
                         });
                         if (istrue) {
                             rutVer.classList.remove('is-invalid');
                             rutVer.classList.add('is-valid');
 
                         } else {
-
                             rutVer.classList.remove('is-valid');
                             rutVer.classList.add('is-invalid');
                         }
