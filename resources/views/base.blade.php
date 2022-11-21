@@ -8,13 +8,12 @@
     <title>Tecnología SC - Sistema de registro vBeta 0.1.2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.css" />
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.rut@1.1.2/jquery.rut.min.js"></script>
 
     <style>
         .bd-placeholder-img {
@@ -69,7 +68,7 @@
         }
 
         body {
-            font-size: .875rem;
+            font-size: 0.9rem;
         }
 
         .feather {
@@ -299,6 +298,27 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
                     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
                 </script>
+                <script>
+                    //  = {"entregado":  "verde","entregado":  "verde","entregado":  "verde","entregado":  "verde"}
+                    var rutVer = document.getElementById("rut");
+                    $("input#rut").rut();
+                    $("input#rut").keyup(function(e) {
+                        var istrue = $.validateRut($(this).val(), null, {
+                            minimumLength: 7
+                        });
+                        if (istrue) {
+                            rutVer.classList.remove('is-invalid');
+                            rutVer.classList.add('is-valid');
+
+                        } else {
+
+                            rutVer.classList.remove('is-valid');
+                            rutVer.classList.add('is-invalid');
+                        }
+                        $(this).val($.formatRut($(this).val()))
+                    });
+                </script>
+
             </main>
         </div>
     </div>
