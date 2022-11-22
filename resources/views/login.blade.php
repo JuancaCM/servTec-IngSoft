@@ -10,7 +10,7 @@
 
 </head>
 <div class=text-center>
-    <img src="/img/logo.png" alt="">
+    <img src="/img/logo.png" width="350" height="350">
 </div>
 <div class="card mt-3 col-md-4 offset-md-4 border-left-primary shadow">
     <div class="card-body">
