@@ -12,4 +12,7 @@ class Equipo extends Model
     function cliente(){
         return $this->belongsTo(Cliente::class);
     }
+    function procedimiento(){
+        return $this->belongsTo(Procedimiento::class);
+    }
 }

@@ -28,6 +28,7 @@ class DashboardController extends Controller
             ->get()
             ->where('id', '=', $id)
             ->first();
-        return view('clientes/procedimiento', compact('procedimiento'));
+            $estados = Estado::all();
+        return view('clientes/procedimiento', compact('procedimiento','estados'));
     }
 }

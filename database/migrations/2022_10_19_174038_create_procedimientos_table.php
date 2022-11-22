@@ -19,7 +19,7 @@ return new class extends Migration
         Schema::create('procedimientos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date('retirado');
+            $table->date('retirado')->nullable()->default(NULL);
             $table->text('comentario');
             $table->integer('valor');
             $table->integer('abono');

@@ -24,7 +24,7 @@
                                 <td>{{ $c->contacto }}</td>
                                 <td>{{ $c->correo }}</td>
                                 <td>
-                                    <a href='/actualizarCliente/{{ $c->id }}' class="btn btn-dark">Editar</a>
+                                    <a href='/actualizarCliente/idCliente={{ $c->id }}' class="btn btn-dark">Editar</a>
                                 </td>
                             </tr>
                         @endforeach
