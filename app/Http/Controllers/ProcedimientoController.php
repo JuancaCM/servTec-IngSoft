@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class ProcedimientoController extends Controller
 {
+    public function registrarProcedimiento(Request $req)
+    {
+        return view('clientes.registroProcedimientos');
+    }
     public function updateProcedimiento($id, Request $req)
     {
         $procedimiento = Procedimiento::where('id',$id)->first();

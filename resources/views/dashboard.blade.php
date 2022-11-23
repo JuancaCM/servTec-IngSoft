@@ -41,11 +41,11 @@
                                     {{ $p->valor }}
                                 </td>
                                 <td class="align-middle">
-                                    <button type="button" class="btn btn-danger dropdown-toggle " data-bs-toggle="dropdown"
+                                    <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown"
                                         aria-expanded="false" style='width:100%' data-bs-offset="100,5">
                                         {{ $p->estado->estado }}
                                     </button>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" onchange="cambiarColor">
                                         @foreach ($estados as $e)
                                             <li><a class="dropdown-item" href="#">{{ $e->estado }}</a></li>
                                         @endforeach
