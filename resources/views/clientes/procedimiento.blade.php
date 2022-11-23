@@ -142,7 +142,7 @@
             </table>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href='{{ url()->previous() }}' class="btn btn-primary">Atrás</a>
+                <a href='/dashboard' class="btn btn-primary">Atrás</a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarCampos">
                     Editar
@@ -166,27 +166,27 @@
                                     <div class="col-4">
                                         <span><strong>Fecha de ingreso: </strong></span>
                                     </div>
-                                    <div class="col-8"><input type="date" readonly class="form-control" id="fecha"
+                                    <div class="col-8"><input type="date" disabled readonly class="form-control" id="fecha"
                                             value={{ $procedimiento->created_at }}></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Nombre: </strong></span></div>
-                                    <div class="col-8"><input type="text" readonly class="form-control" id="nombre"
+                                    <div class="col-8"><input type="text" disabled readonly class="form-control" id="nombre"
                                             value="{{ $procedimiento->equipo->cliente->nombre }}"></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Rut: </strong></span></div>
-                                    <div class="col"><input type="text" readonly class="form-control" id="rut"
+                                    <div class="col"><input type="text" disabled readonly class="form-control" id="rut"
                                             value="{{ $procedimiento->equipo->cliente->rut }}"></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Contacto: </strong></span></div>
-                                    <div class="col-8"><input type="text" readonly class="form-control" id="contacto"
+                                    <div class="col-8"><input type="text" disabled readonly class="form-control" id="contacto"
                                             value="{{ $procedimiento->equipo->cliente->contacto }}"></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Correo: </strong></span></div>
-                                    <div class="col-8"><input type="text" readonly class="form-control" id="correo"
+                                    <div class="col-8"><input type="text" disabled readonly class="form-control" id="correo"
                                             value="{{ $procedimiento->equipo->cliente->correo }}"></div>
                                 </div>
                                 <div class="row mb-2">

@@ -23,7 +23,7 @@
 
                 <div class="form-label mb-3">
                     <span class="text" </span>
-                        <input name="rutCliente" type="text" class="form-control" placeholder="Rut"
+                        <input name="rutCliente" type="text" class="form-control" placeholder="Rut" id="rut"
                             aria-label="Rut cliente" aria-describedby="basic-addon1">
                 </div>
 

@@ -9,7 +9,7 @@ use SebastianBergmann\CodeUnit\FunctionUnit;
 
 class ClienteController extends Controller
 {
-    public function formulario()
+    public function registrarCliente()
     {
         return view('clientes.registroClientes');
     }
