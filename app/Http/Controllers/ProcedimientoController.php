@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Procedimiento;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +11,9 @@ class ProcedimientoController extends Controller
 {
     public function registrarProcedimiento(Request $req)
     {
-        return view('clientes.registroProcedimientos');
+        $id = 1;
+        //  TODO : Ver si se puede devolver el último ID para mostrar en el formulario
+        return view('clientes.registroProcedimientos')->with($id);
     }
     public function updateProcedimiento($id, Request $req)
     {

@@ -14,7 +14,94 @@
                 </div>
             @endif
 
-            <form method="POST">
+            <div class="align-center"><h4><strong> Nueva orden de trabajo </strong></h4></div>
+
+            <form id="registroProcedimiento" method="POST">
+                @csrf
+                <div class="row mb-2 mt-4">
+                    <div class="col-4">
+                        <span><strong>Fecha de ingreso: </strong></span>
+                    </div>
+                    <div class="col-8"><input type="date"  class="form-control" id="fecha"></div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Rut: </strong></span></div>
+                    <div class="col"><input type="text"  class="form-control" id="rut" placeholder="Rut del cliente"
+                            ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Nombre: </strong></span></div>
+                    <div class="col-8"><input type="text"  class="form-control" id="nombre" placeholder="Nombre cliente"
+                            ></div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Contacto: </strong></span></div>
+                    <div class="col-8"><input type="text"   class="form-control" id="contacto" placeholder="Teléfono de contacto"
+                            ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Correo: </strong></span></div>
+                    <div class="col-8"><input type="text"   class="form-control" id="correo" placeholder="Correo cliente"
+                            ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Marca: </strong></span></div>
+                    <div class="col-8"><input type="text" class="form-control" id="marca"  placeholder="Marca del equipo"
+                            name='marca' ></div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Modelo: </strong></span></div>
+                    <div class="col-8"><input type="text" class="form-control" id="modelo" placeholder="Modelo del equipo"
+                            name="modelo" ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Imei: </strong></span></div>
+                    <div class="col-8"><input type="text" class="form-control" id="imei" placeholder="Imei del equipo"
+                            name="imei" ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Nota de ingreso: </strong></span></div>
+                    <div class="col-8"><input type="text" class="form-control" id="nota" placeholder="Nota de ingreso del equipo"
+                            name="nota" ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Valor: </strong></span></div>
+                    <div class="col-8"><input type="text" class="form-control" id="valor" placeholder="Valor de la reparación"
+                            name="valor" ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Abono: </strong></span></div>
+                    <div class="col-8"><input type="text" class="form-control" id="abono" placeholder="Abono"
+                            name="abono" ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Clave: </strong></span></div>
+                    <div class="col-8"><input type="text" class="form-control" id="clave" placeholder="Clave o password del equipo"
+                            name="clave" ></div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Reparación: </strong></span></div>
+                    <div class="col-8"><input type="text" class="form-control" id="reparacion" placeholder="Detalle reparación"
+                            name="reparacion" ></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4"><span><strong>Fecha de retiro: </strong></span></div>
+                    <div class="col-8"><input type="date" class="form-control" id="fechaRetiro" placeholder="Fecha de retiro"
+                            name="fechaRetiro" ></div>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href='/clientes' class="btn btn-primary">Atrás</a>
+                    <button class="btn btn-primary" type="submit">Registrar</button>
+                </div>
+        </div>
+        </form>
+
+            {{-- <form method="POST">
                 @csrf
                 <div class="text-center">
                     <label for="Registro" class="form-label text-dark">Registro de Procedimientos</label>
@@ -22,32 +109,74 @@
                 </div>
 
                 <div class="form-label mb-3">
-                    <span class="text" </span>
-                        <input name="rutCliente" type="text" class="form-control" placeholder="Rut" id="rut"
-                            aria-label="Rut cliente" aria-describedby="basic-addon1">
+                    <input name="rut" type="text" class="form-control" id="rut" placeholder="Rut"
+                        aria-label="Rut" aria-describedby="basic-addon1" required>
                 </div>
 
                 <div class="form-label mb-3">
-                    <span class="text" </span>
-                        <input name="marcaModelo" type="text" class="form-control"
-                            placeholder="Marca y modelo de telefono" aria-label="marcaModelo"
-                            aria-describedby="basic-addon1">
+                    <input name="name" type="text" class="form-control" id="nombre" placeholder="Nombre" aria-label="Nombre"
+                        aria-describedby="basic-addon1">
+                </div>
+
+                <div class="form-label mb-3">
+                    <input name="contacto" type="number" class="form-control" id="contacto" placeholder="Telefono" aria-label="Contacto"
+                        aria-describedby="basic-addon1">
                 </div>
 
                 <div class="input-group mb-3">
-                    <input name="fechaIngreso" type="text" class="form-control" placeholder="Fecha de ingreso (dd-MM-yy)"
+                    <input name="correo" type="email" class="form-control" id="correo" placeholder="Correo" aria-label="Correo">
+                </div>
+
+                <div class="form-label mb-3">
+                    <input name="marcaModelo" type="text" class="form-control" id="marca" placeholder="Marca"
+                        aria-label="marcaModelo" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="form-label mb-3">
+                    <input name="marcaModelo" type="text" class="form-control" id="modelo" placeholder="Modelo"
+                        aria-label="marcaModelo" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="form-label mb-3">
+                    <input name="marcaModelo" type="text" class="form-control" id="imei" placeholder="Imei"
+                        aria-label="marcaModelo" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="form-label mb-3">
+                    <input name="marcaModelo" type="text" class="form-control" id="nota" placeholder="Nota"
+                        aria-label="marcaModelo" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input name="fechaIngreso" type="date" class="form-control" id="fecha" placeholder="Fecha de ingreso"
                         aria-label="Correo">
                 </div>
 
+                <div class="form-label mb-3">
+                    <input name="marcaModelo" type="text" class="form-control" id="marca" placeholder="Valor"
+                        aria-label="marcaModelo" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="form-label mb-3">
+                    <input name="marcaModelo" type="text" class="form-control" id="abono" placeholder="Abono"
+                        aria-label="marcaModelo" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="form-label mb-3">
+                    <input name="marcaModelo" type="text" class="form-control" id="clave" placeholder="Clave"
+                        aria-label="marcaModelo" aria-describedby="basic-addon1">
+                </div>
+
                 <div class="input-group mb-3">
-                    <textarea name="comentarios" class="form-control" placeholder="Comentarios sobre el equipo recibido" aria-label="With textarea"></textarea>
+                    <textarea name="comentarios" class="form-control" placeholder="Comentarios sobre el equipo recibido"
+                        aria-label="With textarea"></textarea>
                 </div>
 
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                 </div>
 
-            </form>
+            </form> --}}
         </div>
     </div>
 @endsection
