@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->text('marca');
             $table->text('modelo');
-            $table->text('imei');
+            $table->text('imei')->nullable()->default(NULL);
             $table->text('nota');
             $table->foreignIdFor(Cliente::class)->constrained();
         });
