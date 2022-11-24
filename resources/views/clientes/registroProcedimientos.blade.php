@@ -6,15 +6,15 @@
 
             @if (null != session('insert') && session('insert'))
                 <div class="alert alert-success text-center">
-                    Cliente registrado en la base de datos
+                    El procedimiento se ha registrado correctamente
                 </div>
             @elseif (null != session('insert') && !session('insert'))
                 <div class="alert alert-danger text-center">
-                    Ha ocurrido un error al registrar al cliente
+                    Ha ocurrido un error al registrar el procedimiento
                 </div>
             @endif
 
-            <div class="align-center"><h4><strong> Nueva orden de trabajo </strong></h4></div>
+            <h4 class="card-title text-center">Nueva orden de trabajo</h4>
 
             <form id="registroProcedimiento" method="POST">
                 @csrf
