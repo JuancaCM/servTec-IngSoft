@@ -17,7 +17,7 @@ Route::middleware([Middleware::class])->group(function () {
     Route::post('/actualizarCliente/idCliente={id}', [ClienteController::class, 'updateCliente']);
 
     Route::get('/registroProcedimientos', [ProcedimientoController::class, 'registrarProcedimiento']);
-    // Route::post('/registroProcedimientos/idProcedimiento={id}', [ProcedimientoController::class, 'registroProcedimiento']);
+    Route::post('/registroProcedimientos', [ProcedimientoController::class, 'registroProcedimiento']);
 
     Route::get('/logout', function (Request $req) {
         $req->session()->flush();
@@ -27,6 +27,9 @@ Route::middleware([Middleware::class])->group(function () {
     Route::get('/dashboard/ot={id}', [DashboardController::class, 'showProc']);
     Route::post('/dashboard/ot={id}', [ProcedimientoController::class, 'updateProcedimiento']);
     Route::get('/listaUsuarios', [UsuarioController::class,'showUsers']);
+    Route::get('/getDatosCliente',[ClienteController::class, 'getDatosCliente'])->name('getDatosCliente');
+
+
 });
 
 Route::get('/', function () {
@@ -37,4 +40,7 @@ Route::get('/login', [authController::class, 'login']);
 Route::post('/login', [authController::class, 'loginUser']);
 Route::get('/seguimiento', function () {
     return view('/publico/seguimiento');
+
 });
+
+

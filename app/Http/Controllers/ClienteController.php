@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 use SebastianBergmann\CodeUnit\FunctionUnit;
 
 class ClienteController extends Controller
@@ -22,14 +23,27 @@ class ClienteController extends Controller
     public function getClient($id, Request $req)
     {
         $cliente = Cliente::findOrFail($id);
-        return view('clientes.actualizarCliente',compact('cliente'));
+        return view('clientes.actualizarCliente', compact('cliente'));
+    }
+
+    public function getDatosCliente(Request $req)
+    {
+        try {
+            $datosCliente = Cliente::where('rut', $req->rut)->first();
+            if ($datosCliente) {
+                return response()->json($datosCliente, 200);
+            }
+            return response()->json(null, 404);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 
     public function updateCliente($id, Request $req)
     {
         $cliente = Cliente::findOrFail($id);
         DB::beginTransaction();
-        try{
+        try {
             $rut = $req->input('rut');
             $name = $req->input('name');
             $contacto = $req->input('contacto');
@@ -43,7 +57,7 @@ class ClienteController extends Controller
             DB::commit();
 
             return back()->with('success', true);
-        }catch(\Throwable $th) {
+        } catch (\Throwable $th) {
             DB::rollback();
             return back()->with('success', false);
         }
@@ -52,7 +66,7 @@ class ClienteController extends Controller
     public function guardar(Request $req)
     {
         $esta = Cliente::where('rut', $req->input('rut'))->get();
-        if (count($esta)!= 0 ) {
+        if (count($esta) != 0) {
             return back()->with('errorInsert', true);
         }
 

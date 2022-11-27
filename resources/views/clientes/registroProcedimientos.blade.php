@@ -16,7 +16,7 @@
 
             <h4 class="card-title text-center">Nueva orden de trabajo</h4>
 
-            <form id="registroProcedimiento" method="POST">
+            <form id="registroProcedimiento" method="POST" action="#">
                 @csrf
                 <div class="row mb-2 mt-4">
                     <div class="col-4">
@@ -27,7 +27,7 @@
 
                 <div class="row mb-2">
                     <div class="col-4"><span><strong>Rut: </strong></span></div>
-                    <div class="col"><input type="text" class="form-control" id="rut"
+                    <div class="col"><input type="text" class="form-control" required id="rut"
                             placeholder="Rut del cliente"></div>
                 </div>
                 <div class="row mb-2">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="row mb-2">
                     <div class="col-4"><span><strong>Correo: </strong></span></div>
-                    <div class="col-8"><input type="text" class="form-control" id="correo"
+                    <div class="col-8"><input type="email" class="form-control" id="correo"
                             placeholder="Correo cliente"></div>
                 </div>
                 <div class="row mb-2">
@@ -91,7 +91,7 @@
                 <div class="row mb-2">
                     <div class="col-4"><span><strong>Fecha de retiro: </strong></span></div>
                     <div class="col-8"><input type="date" class="form-control" id="fechaRetiro"
-                            placeholder="Fecha de retiro" name="fechaRetiro"></div>
+                            placeholder="Fecha de retiro" name="retirado"></div>
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -101,4 +101,31 @@
         </div>
         </form>
     </div>
+    <script>
+        $("#rut").focusout(function(e) {
+            var rut = $(this).val();
+            if (rut.length > 6) {
+                $.ajax({
+                    type: "GET",
+                    url: "{{ route('getDatosCliente') }}",
+                    data: {
+                        "_token": $('#token').val(),
+                        'rut': rut
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        $('#nombre').val(data["nombre"]);
+                        $('#contacto').val(data["contacto"]);
+                        $('#correo').val(data["correo"]);
+                    },
+                    error: function(response) {
+                        $('#nombre').val("");
+                        $('#contacto').val("");
+                        $('#correo').val("");
+                    }
+                });
+            }
+        });
+        document.getElementById('fecha').value = moment().format('YYYY-MM-DD');
+    </script>
 @endsection

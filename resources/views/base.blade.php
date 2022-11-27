@@ -15,6 +15,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.rut@1.1.2/jquery.rut.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
     <style>
         .bd-placeholder-img {

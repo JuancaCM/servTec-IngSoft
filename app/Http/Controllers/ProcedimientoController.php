@@ -11,9 +11,7 @@ class ProcedimientoController extends Controller
 {
     public function registrarProcedimiento(Request $req)
     {
-        $id = 1;
-        //  TODO : Ver si se puede devolver el último ID para mostrar en el formulario
-        return view('clientes.registroProcedimientos')->with($id);
+        return view('clientes.registroProcedimientos');
     }
     public function updateProcedimiento($id, Request $req)
     {
