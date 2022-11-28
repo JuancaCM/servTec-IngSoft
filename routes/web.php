@@ -16,6 +16,7 @@ Route::middleware([Middleware::class])->group(function () {
     Route::get('/clientes', [ClienteController::class, 'showClients']);
     Route::get('/actualizarCliente/idCliente={id}', [ClienteController::class, 'getClient']);
     Route::post('/actualizarCliente/idCliente={id}', [ClienteController::class, 'updateCliente']);
+    Route::get('/getDatosCliente',[ClienteController::class, 'getDatosCliente'])->name('getDatosCliente');
 
     Route::get('/registroProcedimientos', [ProcedimientoController::class, 'vistaProcedimiento']);
     Route::post('/registroProcedimientos', [ProcedimientoController::class, 'registroProcedimiento']);
@@ -27,8 +28,11 @@ Route::middleware([Middleware::class])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'getDashboard']);
     Route::get('/dashboard/ot={id}', [DashboardController::class, 'showProc']);
     Route::post('/dashboard/ot={id}', [ProcedimientoController::class, 'updateProcedimiento']);
+
     Route::get('/listaUsuarios', [UsuarioController::class,'showUsers']);
-    Route::get('/getDatosCliente',[ClienteController::class, 'getDatosCliente'])->name('getDatosCliente');
+    Route::post('/listaUsuarios', [UsuarioController::class,'updateUsuario']);
+
+
 
 
 });
