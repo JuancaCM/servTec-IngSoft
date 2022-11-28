@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Mail\ResetearPassword;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
