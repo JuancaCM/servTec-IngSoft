@@ -27,4 +27,25 @@ class UsuarioController extends Controller
             return back()->with('success', false);
         }
     }
+    public function viewProfile()
+    {
+        $usuario = Usuario::where('id',session("id"))->first();
+        return view('editProfile',compact ('usuario'));
+    }
+    public function editProfile(Request $req)
+    {
+
+        try {
+            $nombre = $req->nombre;
+            $correo = $req->correo;
+
+            $usuario = Usuario::where('id', session('id'))->first();
+            $usuario->nombre = $nombre;
+            $usuario->correo = $correo;
+            $usuario->save();
+            return back()->with('success', true);
+        } catch (\Throwable $th) {
+            return back()->with('success', false);
+        }
+    }
 }

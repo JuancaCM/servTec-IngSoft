@@ -32,6 +32,8 @@ Route::middleware([Middleware::class])->group(function () {
     Route::get('/listaUsuarios', [UsuarioController::class,'showUsers']);
     Route::post('/listaUsuarios', [UsuarioController::class,'updateUsuario']);
 
+    Route::get('/editProfile', [UsuarioController::class, 'viewProfile']);
+    Route::post('/editProfile', [UsuarioController::class, 'editProfile']);
 
 
 

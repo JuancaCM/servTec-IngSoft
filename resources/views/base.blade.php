@@ -190,7 +190,7 @@
                                 <i class="bi bi-person-fill"> {{ session()->get('nombre') }}</i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="/editProfile">Perfil</a></li>
                                 <li><a class="dropdown-item" href="/logout">Salir</a></li>
                             </ul>
                         </li>
