@@ -16,7 +16,7 @@ Route::middleware([Middleware::class])->group(function () {
     Route::get('/actualizarCliente/idCliente={id}', [ClienteController::class, 'getClient']);
     Route::post('/actualizarCliente/idCliente={id}', [ClienteController::class, 'updateCliente']);
 
-    Route::get('/registroProcedimientos', [ProcedimientoController::class, 'registrarProcedimiento']);
+    Route::get('/registroProcedimientos', [ProcedimientoController::class, 'vistaProcedimiento']);
     Route::post('/registroProcedimientos', [ProcedimientoController::class, 'registroProcedimiento']);
 
     Route::get('/logout', function (Request $req) {
