@@ -29,6 +29,8 @@
                 <label for="Password" class="form-label">Contraseña</label>
                 <input type="password" name="password" class="form-control" id="Password">
             </div>
+            <div class="mb-2" style="text-align:right"><a href="/resetearPassword" class="link-primary"> Olvidé mi contraseña</a></div>
+
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary">Ingresar</button>
             </div>

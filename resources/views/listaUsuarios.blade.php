@@ -11,11 +11,9 @@
                             <th scope="col">Nombre de usuario</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Rol</th>
-                            <th scope="col">Password</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- TODO: IMP. password recover -->
                         @foreach ($usuarios as $u)
                             <tr>
                                 <td>{{ $u->id}}</td>
@@ -27,8 +25,6 @@
                                 @else
                                     <td>Operador</td>
                                 @endif
-
-                                <td><a href='#' class="btn btn-dark">Resetear</a></td>
                             </tr>
                         @endforeach
                     </tbody>

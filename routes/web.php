@@ -4,6 +4,7 @@ use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProcedimientoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Middleware\Middleware;
@@ -40,7 +41,11 @@ Route::get('/login', [authController::class, 'login']);
 Route::post('/login', [authController::class, 'loginUser']);
 Route::get('/seguimiento', function () {
     return view('/publico/seguimiento');
+});
+Route::get('/resetPassword', [MailController::class, 'resetearPassword'])->name("resetearPasswordAPI");
 
+Route::get('/resetearPassword', function () {
+    return view('/publico/resetearPassword');
 });
 
 
