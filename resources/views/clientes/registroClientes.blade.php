@@ -13,7 +13,7 @@
                 </div>
             @endif
 
-            <form method="POST">
+            <form class="requires-validation" novalidate method="POST">
                 @csrf
                 <div class="text-center">
                     <label for="Registro" class="form-label text-dark">Registro de clientes</label>
@@ -21,18 +21,28 @@
                 </div>
 
                 <div class="form-label mb-3">
-                         <input name="rut" type="text" class="form-control" id="rut" placeholder="Rut"
-                            aria-label="Rut" aria-describedby="basic-addon1" required>
+                    <input name="rut" type="text" class="form-control" id="rut" placeholder="Rut"
+                        aria-label="Rut" aria-describedby="basic-addon1" required>
+                    <div class="invalid-feedback">
+                        Ha ingresado un rut inválido
+                    </div>
                 </div>
 
                 <div class="form-label mb-3">
-                        <input name="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
-                            aria-describedby="basic-addon1">
+                    <input name="name" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
+                        aria-describedby="basic-addon1" required>
+                    <div class="invalid-feedback">
+                        El campo nombre puede estar vacío
+                    </div>
+
                 </div>
 
                 <div class="form-label mb-3">
-                        <input name="contacto" type="number" class="form-control" placeholder="Telefono"
-                            aria-label="Contacto" aria-describedby="basic-addon1">
+                    <input name="contacto" type="number" class="form-control" placeholder="Telefono" aria-label="Contacto"
+                        aria-describedby="basic-addon1" required>
+                    <div class="invalid-feedback">
+                        El campo teléfono puede estar vacío
+                    </div>
                 </div>
 
                 <div class="input-group mb-3">
@@ -46,5 +56,4 @@
             </form>
         </div>
     </div>
-
 @endsection

@@ -68,7 +68,6 @@ class ClienteController extends Controller
             return back()->with('errorInsert', true);
         }
 
-        DB::beginTransaction();
         try {
             $rut = $req->input('rut');
             $name = $req->input('name');
@@ -82,7 +81,6 @@ class ClienteController extends Controller
             $user->correo = $correo;
 
             $user->save();
-            DB::commit();
 
             return back()->with('insert', true);
         } catch (\Throwable $th) {
