@@ -41,7 +41,7 @@
                                     {{ $p->valor }}
                                 </td>
                                 <td class="align-middle">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown"
+                                    {{-- <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown"
                                         aria-expanded="false" style='width:100%' data-bs-offset="100,5">
                                         {{ $p->estado->estado }}
                                     </button>
@@ -49,7 +49,8 @@
                                         @foreach ($estados as $e)
                                             <li><a class="dropdown-item" href="#">{{ $e->estado }}</a></li>
                                         @endforeach
-                                    </ul>
+                                    </ul> --}}
+                                    <strong>{{$p->estado->estado}}</strong>
                                 </td>
                                 <td class="align-middle">
                                     <a href='dashboard/ot={{ $p->id }}' class="btn btn-outline-warning">Detalle</a>
