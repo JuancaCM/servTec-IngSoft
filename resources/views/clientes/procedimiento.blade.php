@@ -2,14 +2,19 @@
 
 @section('content')
     @if (null != session('success') && session('success'))
-        <div class="alert alert-success text-center">
-            Procedimiento actualizado correctamente
+        <div class="col-md-6 mt-3 offset-md-3 mb-5 border-left-primary shadow">
+            <div class="alert alert-success text-center">
+                Procedimiento actualizado correctamente
+            </div>
         </div>
     @elseif (null != session('success') && session('success'))
-        <div class="alert alert-danger text-center">
-            Ha ocurrido un error al actualizar el procedimiento OT
+        <div class="col-md-6 mt-3 offset-md-3 mb-5 border-left-primary shadow">
+            <div class="alert alert-danger text-center">
+                Ha ocurrido un error al actualizar el procedimiento OT
+            </div>
         </div>
     @endif
+
     <div class="card mt-3 col-md-6 offset-md-3 border-left-primary shadow">
         <div class="card-body">
             <table class="table">
@@ -166,28 +171,28 @@
                                     <div class="col-4">
                                         <span><strong>Fecha de ingreso: </strong></span>
                                     </div>
-                                    <div class="col-8"><input type="date" disabled readonly class="form-control" id="fecha"
-                                            value={{ $procedimiento->created_at }}></div>
+                                    <div class="col-8"><input type="date" disabled readonly class="form-control"
+                                            id="fecha" value={{ $procedimiento->created_at }}></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Nombre: </strong></span></div>
-                                    <div class="col-8"><input type="text" disabled readonly class="form-control" id="nombre"
-                                            value="{{ $procedimiento->equipo->cliente->nombre }}"></div>
+                                    <div class="col-8"><input type="text" disabled readonly class="form-control"
+                                            id="nombre" value="{{ $procedimiento->equipo->cliente->nombre }}"></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Rut: </strong></span></div>
-                                    <div class="col"><input type="text" disabled readonly class="form-control" id="rut"
-                                            value="{{ $procedimiento->equipo->cliente->rut }}"></div>
+                                    <div class="col"><input type="text" disabled readonly class="form-control"
+                                            id="rut" value="{{ $procedimiento->equipo->cliente->rut }}"></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Contacto: </strong></span></div>
-                                    <div class="col-8"><input type="text" disabled readonly class="form-control" id="contacto"
-                                            value="{{ $procedimiento->equipo->cliente->contacto }}"></div>
+                                    <div class="col-8"><input type="text" disabled readonly class="form-control"
+                                            id="contacto" value="{{ $procedimiento->equipo->cliente->contacto }}"></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Correo: </strong></span></div>
-                                    <div class="col-8"><input type="text" disabled readonly class="form-control" id="correo"
-                                            value="{{ $procedimiento->equipo->cliente->correo }}"></div>
+                                    <div class="col-8"><input type="text" disabled readonly class="form-control"
+                                            id="correo" value="{{ $procedimiento->equipo->cliente->correo }}"></div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-4"><span><strong>Marca: </strong></span></div>
@@ -254,8 +259,7 @@
                         </form>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
-                            <button type="submit" id="guardar" class="btn btn-primary"
-                                data-bs-dismiss="modal">Guardar</button>
+                            <button type="submit" id="guardar" class="btn btn-primary">Guardar</button>
                         </div>
                     </div>
                 </div>

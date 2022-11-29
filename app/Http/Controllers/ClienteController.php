@@ -42,7 +42,6 @@ class ClienteController extends Controller
     public function updateCliente($id, Request $req)
     {
         $cliente = Cliente::findOrFail($id);
-        DB::beginTransaction();
         try {
             $rut = $req->input('rut');
             $name = $req->input('name');
@@ -54,7 +53,6 @@ class ClienteController extends Controller
             $cliente->contacto = $contacto;
             $cliente->correo = $correo;
             $cliente->save();
-            DB::commit();
 
             return back()->with('success', true);
         } catch (\Throwable $th) {

@@ -23,7 +23,7 @@
                     <div class="col-4 mb-auto"><span><strong>Rut : </strong></span></div>
                     <div class="col-8 mb-auto">
                         <div class="form-label mb-3">
-                            <input name="rut" type="text" class="form-control" id="rut"
+                            <input name="rut" type="text" class="form-control" id="rut" readonly
                                 value="{{ $cliente->rut }}" placeholder="RUT" aria-label="Rut"
                                 aria-describedby="basic-addon1">
                         </div>

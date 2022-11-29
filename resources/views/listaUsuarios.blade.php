@@ -2,14 +2,22 @@
 
 @section('content')
     @if (null != session('success') && session('success'))
-        <div class="alert alert-success text-center">
-            Usuario actualizado correctamente
+        <div class="mt-3 col-md-4 offset-md-4 border-left-primary shadow">
+            <div class="alert alert-success text-center">
+                Usuario actualizado correctamente
+            </div>
         </div>
     @elseif (null != session('success') && session('success'))
-        <div class="alert alert-danger text-center">
-            Ha ocurrido un error al actualizar el Usuario
+        <div class="mt-3 col-md-4 offset-md-4 border-left-primary shadow">
+            <div class="alert alert-danger text-center">
+                Ha ocurrido un error al actualizar el Usuario
+            </div>
         </div>
     @endif
+
+    <div class="mt-4 text-right">
+        <a href='#' class="btn btn-primary">Nuevo usuario</a>
+    </div>
     <div class="row justify-content-center">
         <div class="card mt-5 col-md-8 shadow">
             <div class="card-body">
@@ -69,6 +77,24 @@
                                                     </div>
                                                     <div class="col-8"><input type="text" class="form-control"
                                                             id="correo" name="correo" value="{{ $u->correo }}">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-4"><span><strong>Rol: </strong></span>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <select class="form-select" name="rol_id" aria-label="Select rol">
+                                                            @if ($u->rol_id == 1)
+                                                                {
+                                                                <option selected value="1">Administrador</option>
+                                                                <option value="2">Operador</option>
+                                                                }
+                                                            @else{
+                                                                <option value="1">Administrador</option>
+                                                                <option selected value="2">Operador</option>
+                                                                }
+                                                            @endif
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <input type="hidden" value="{{ $u->id }}" name="id">

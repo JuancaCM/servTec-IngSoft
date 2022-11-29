@@ -26,7 +26,7 @@ class ResetearPassword extends Mailable
     public function build()
     {
         //\Log::info($this->password);
-        return $this->subject('Password reset')
+        return $this->subject('Solicitud de reestablecimiento de contraseña')
         ->markdown('emails.ResetearPassword');
     }
 }

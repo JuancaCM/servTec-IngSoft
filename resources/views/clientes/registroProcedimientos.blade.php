@@ -3,7 +3,6 @@
 @section('content')
     <div class="card mt-3 col-md-4 offset-md-4 border-left-primary shadow">
         <div class="card-body ">
-
             @if (null != session('success') && session('success'))
                 <div class="alert alert-success text-center">
                     El procedimiento se ha registrado correctamente
@@ -15,6 +14,7 @@
             @endif
 
             <h4 class="card-title text-center">Nueva orden de trabajo</h4>
+            <hr>
 
             <form id="registroProcedimiento" method="POST">
                 @csrf
