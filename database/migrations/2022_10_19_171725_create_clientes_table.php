@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('rut')->unique();
             $table->text('nombre');
             $table->text('contacto');
-            $table->text('correo');
+            $table->text('correo')->nullable()->default(NULL);
             $table->timestamps();
         });
     }
