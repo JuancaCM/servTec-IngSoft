@@ -22,6 +22,8 @@ Route::middleware([Middleware::class])->group(function () {
     Route::post('/registroProcedimientos', [ProcedimientoController::class, 'registroProcedimiento']);
 
     Route::get('/logout', function (Request $req) {
+        $req->session()->invalidate();
+        $req->session()->regenerateToken();
         $req->session()->flush();
         return redirect('/login');
     });
@@ -34,6 +36,9 @@ Route::middleware([Middleware::class])->group(function () {
 
     Route::get('/editProfile', [UsuarioController::class, 'viewProfile']);
     Route::post('/editProfile', [UsuarioController::class, 'editProfile']);
+
+    Route::get('/registroUsuario',[UsuarioController::class, 'vistaRegistroUsuario']);
+    Route::post('/registroUsuario',[UsuarioController::class, 'registrarUsuario']);
 
 
 

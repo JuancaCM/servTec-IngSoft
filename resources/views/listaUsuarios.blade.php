@@ -15,11 +15,11 @@
         </div>
     @endif
 
-    <div class="mt-4 text-right">
-        <a href='#' class="btn btn-primary">Nuevo usuario</a>
-    </div>
     <div class="row justify-content-center">
-        <div class="card mt-5 col-md-8 shadow">
+        <div class="mt-5 col-md-8" style="text-align: right">
+            <a href='/registroUsuario' class="btn btn-primary">Nuevo usuario</a>
+        </div>
+        <div class="card mt-3 col-md-8 shadow">
             <div class="card-body">
                 <table id='Tabla1' class="table table-striped">
                     <thead>
@@ -70,7 +70,8 @@
                                                         <span><strong>Nombre: </strong></span>
                                                     </div>
                                                     <div class="col-8"><input type="text" class="form-control"
-                                                            id="nombre" name="nombre" value="{{ $u->nombre }}"></div>
+                                                            id="nombre" name="nombre" value="{{ $u->nombre }}">
+                                                    </div>
                                                 </div>
                                                 <div class="row mb-2">
                                                     <div class="col-4"><span><strong>Correo: </strong></span>
