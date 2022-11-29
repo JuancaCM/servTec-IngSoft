@@ -229,7 +229,7 @@
                             </a>
                         </li>
 
-                        @if (session()->get('id') == 1)
+                        @if (session()->get('rol_id') == 1)
                             <h6
                                 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
                                 <i class="bi bi-house-gear-fill"></i>
