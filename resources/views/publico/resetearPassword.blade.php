@@ -19,6 +19,7 @@
                 <input type="email" name="mail" class="form-control" id="mail">
             </div>
             <div style="text-align:right">
+                <a href='/login' class="btn btn-primary">Atrás</a>
                 <button type="submit" class="btn btn-primary" id="recuperar">Recuperar</button>
             </div>
         </div>
@@ -39,10 +40,10 @@
             },
             dataType: 'json',
             success: function(data) {
-                alert("OK")
+                alert("Se ha enviado correctamente la solicitud")
             },
             error: function(response) {
-                alert("ERROR")
+                alert("Ha ocurrido un error o su correo no está registrado")
             }
         });
     });

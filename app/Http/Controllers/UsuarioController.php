@@ -21,6 +21,7 @@ class UsuarioController extends Controller
             $usuario = Usuario::where('id', $req->id)->first();
             $usuario->nombre = $req->nombre;
             $usuario->correo = $req->correo;
+            $usuario->rol_id = $req->rol_id;
             $usuario->save();
             return back()->with('success', true);
         } catch (\Throwable $th) {
@@ -34,7 +35,6 @@ class UsuarioController extends Controller
     }
     public function editProfile(Request $req)
     {
-
         try {
             $nombre = $req->nombre;
             $correo = $req->correo;
