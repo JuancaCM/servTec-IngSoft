@@ -42,14 +42,14 @@
                     <div class="col-4">
                         <span><strong>Contraseña nueva: </strong></span>
                     </div>
-                    <div class="col-8"><input type="password" class="form-control" id="newPassword" name="newPassword"
+                    <div class="col-8"><input type="password" class="form-control" id="newPassword" name="password"
                             placeholder="Ingrese nueva password"></div>
                 </div>
                 <div class="row mb-2">
                     <div class="col-4">
                         <span><strong>Confirmar contraseña nueva: </strong></span>
                     </div>
-                    <div class="col-8"><input type="password" class="form-control" id="newPassword2" name="newPassword2"
+                    <div class="col-8"><input type="password" class="form-control" id="newPassword2" name="password_confirmation"
                             placeholder="Confirmar nueva password"></div>
                 </div>
                 <div class="d-grid mt-3 gap-2 d-md-flex justify-content-md-end">
