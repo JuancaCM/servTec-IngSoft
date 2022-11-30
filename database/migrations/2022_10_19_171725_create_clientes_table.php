@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('nombre');
             $table->text('contacto');
             $table->text('correo')->nullable()->default(NULL);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

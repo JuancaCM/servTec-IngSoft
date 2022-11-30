@@ -88,4 +88,14 @@ class ClienteController extends Controller
             return back()->with('errorInsert', false);
         }
     }
+    public function borrarCliente($id)
+    {
+        try {
+            Cliente::find($id)->delete();
+
+            return back()->with('success', true);
+        } catch (\Throwable $th) {
+            return back()->with('success', false);
+        }
+    }
 }

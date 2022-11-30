@@ -29,7 +29,8 @@
                                     {{ $p->id }}
                                 </td>
                                 <td class="align-middle">
-                                    {{ $p->equipo->cliente->rut }}
+                                    {{-- {{ $p->equipo->cliente->rut ?? 'Eliminado'}} --}}
+                                    {{ $p->equipo->cliente->rut}}
                                 </td>
                                 <td class="align-middle">
                                     {{ $p->equipo->marca }}
