@@ -14,6 +14,19 @@
             </div>
         </div>
     @endif
+    @if (null != session('eliminacion') && session('eliminacion'))
+        <div class="mt-3 col-md-4 offset-md-4 border-left-primary shadow">
+            <div class="alert alert-success text-center">
+                Usuario eliminado correctamente
+            </div>
+        </div>
+    @elseif (null != session('eliminacion') && session('eliminacion'))
+        <div class="mt-3 col-md-4 offset-md-4 border-left-primary shadow">
+            <div class="alert alert-danger text-center">
+                Ha ocurrido un error al eliminar el Usuario
+            </div>
+        </div>
+    @endif
 
     <div class="row justify-content-center">
         <div class="mt-5 col-md-8" style="text-align: right">
@@ -43,13 +56,32 @@
                                 @else
                                     <td>Operador</td>
                                 @endif
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <td><form method="post" action="{{route('borrarUsuario',$u->id)}}">
+                                    @csrf
+                                    <div class="text-center">
+                                        <input type="hidden" name="_method" value="DELETE"/>
+                                        <a class="btn btn-warning" style="--bs-btn-font-size: .45rem;"
+                                            data-bs-toggle="modal" data-bs-target="#editarCampos{{ $u->id }}"><i
+                                                class="bi bi-pencil-square" style="font-size: 2em;"></i></a>
+                                        <button onclick="return confirm('¿Está seguro que desea eliminar el registro?')" class="btn btn-danger" style="--bs-btn-font-size: .45rem;"><i
+                                                class="bi bi-x-circle" style="font-size: 2em;"></i></button>
+
+                                        {{-- <a href='/actualizarCliente/idCliente={{ $c->id }}' class="btn btn-dark">Editar</a> --}}
+                                    </div></form>
+                                </td>
+                                {{-- <td>
+                                    <div class="text-center">
+                                        <a class="btn btn-warning" style="--bs-btn-font-size: .45rem;"
+                                            data-bs-toggle="modal" data-bs-target="#editarCampos{{ $u->id }}"><i
+                                                class="bi bi-pencil-square" style="font-size: 2em;"></i></a>
+                                        <a href="" class="btn btn-danger" style="--bs-btn-font-size: .45rem;"><i
+                                                class="bi bi-x-circle" style="font-size: 2em;"></i></a>
+                                    </div>
+                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#editarCampos{{ $u->id }}">
                                         Editar
                                     </button>
-
-                                </td>
+                                </td> --}}
                             </tr>
                             <!-- Modal -->
                             <div class="modal fade" id="editarCampos{{ $u->id }}" tabindex="-1"

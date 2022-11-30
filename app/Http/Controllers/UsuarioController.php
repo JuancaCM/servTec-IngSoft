@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
-
 class UsuarioController extends Controller
 {
     public function showUsers()
@@ -56,9 +55,8 @@ class UsuarioController extends Controller
     public function registrarUsuario(Request $req)
     {
         try {
-            $esta = Usuario::where('correo',$req->input('correo'))->get();
-            if(count($esta)!= 0)
-            {
+            $esta = Usuario::where('correo', $req->input('correo'))->get();
+            if (count($esta) != 0) {
                 return back()->with('success', false);
             }
             $nombre = $req->nombre;
@@ -71,7 +69,7 @@ class UsuarioController extends Controller
             $usuario->rol_id = $rol_id;
             $password = Str::random(10);
             $usuario->password = Hash::make($password);
-            Mail::to($correo)->send(new ResetearPassword($correo,$password));
+            Mail::to($correo)->send(new ResetearPassword($correo, $password));
             $usuario->save();
 
             return back()->with('success', true);
@@ -82,5 +80,14 @@ class UsuarioController extends Controller
     public function vistaRegistroUsuario()
     {
         return view('registroUsuario');
+    }
+    public function borrarUsuario($id)
+    {
+        try {
+            Usuario::find($id)->delete();
+            return back()->with('eliminacion', true);
+        } catch (\Throwable $th) {
+            return back()->with('eliminacion', false);
+        }
     }
 }
