@@ -14,9 +14,11 @@ Route::middleware([Middleware::class])->group(function () {
     Route::get('/registro', [ClienteController::class, 'registrarCliente']);
     Route::post('/registro', [ClienteController::class, 'guardar']);
     Route::get('/clientes', [ClienteController::class, 'showClients']);
+    Route::delete('/cliente/{id}', [ClienteController::class, 'borrarCliente'])->name('borrarCliente');
+
     Route::get('/actualizarCliente/idCliente={id}', [ClienteController::class, 'getClient']);
     Route::post('/actualizarCliente/idCliente={id}', [ClienteController::class, 'updateCliente']);
-    Route::get('/getDatosCliente',[ClienteController::class, 'getDatosCliente'])->name('getDatosCliente');
+    Route::get('/getDatosCliente', [ClienteController::class, 'getDatosCliente'])->name('getDatosCliente');
 
     Route::get('/registroProcedimientos', [ProcedimientoController::class, 'vistaProcedimiento']);
     Route::post('/registroProcedimientos', [ProcedimientoController::class, 'registroProcedimiento']);
@@ -31,15 +33,15 @@ Route::middleware([Middleware::class])->group(function () {
     Route::get('/dashboard/ot={id}', [DashboardController::class, 'showProc']);
     Route::post('/dashboard/ot={id}', [ProcedimientoController::class, 'updateProcedimiento']);
 
-    Route::get('/listaUsuarios', [UsuarioController::class,'showUsers']);
-    Route::post('/listaUsuarios', [UsuarioController::class,'updateUsuario']);
+    Route::get('/listaUsuarios', [UsuarioController::class, 'showUsers']);
+    Route::post('/listaUsuarios', [UsuarioController::class, 'updateUsuario']);
+    Route::delete('/eliminarUsuario/{id}', [UsuarioController::class, 'borrarUsuario'])->name('borrarUsuario');
 
     Route::get('/editProfile', [UsuarioController::class, 'viewProfile']);
     Route::post('/editProfile', [UsuarioController::class, 'editProfile']);
 
-    Route::get('/registroUsuario',[UsuarioController::class, 'vistaRegistroUsuario']);
-    Route::post('/registroUsuario',[UsuarioController::class, 'registrarUsuario']);
-
+    Route::get('/registroUsuario', [UsuarioController::class, 'vistaRegistroUsuario']);
+    Route::post('/registroUsuario', [UsuarioController::class, 'registrarUsuario']);
 
 
 });
@@ -53,10 +55,8 @@ Route::post('/login', [authController::class, 'loginUser']);
 Route::get('/seguimiento', function () {
     return view('/publico/seguimiento');
 });
-Route::get('/resetPassword', [MailController::class, 'resetearPassword'])->name("resetearPasswordAPI");
+Route::get('/resetPassword', [MailController::class, 'resetearPassword'])->name('resetearPasswordAPI');
 
 Route::get('/resetearPassword', function () {
     return view('/publico/resetearPassword');
 });
-
-
