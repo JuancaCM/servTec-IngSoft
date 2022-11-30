@@ -16,11 +16,13 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->text('nombre');
             $table->text('password');
             $table->string('correo')->unique();
             $table->foreignIdFor(Rol::class)->constrained();
+            $table->softDeletes();
+            $table->timestamps();
+
         });
     }
 

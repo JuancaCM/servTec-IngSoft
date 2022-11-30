@@ -16,12 +16,13 @@ return new class extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->text('marca');
             $table->text('modelo');
             $table->text('imei')->nullable()->default(NULL);
             $table->text('nota');
             $table->foreignIdFor(Cliente::class)->constrained();
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
