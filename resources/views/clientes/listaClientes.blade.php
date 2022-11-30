@@ -3,6 +3,15 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="card mt-5 col-md-8 shadow">
+            @if (null != session('success') && session('success'))
+                <div class="mt-3 alert alert-success text-center">
+                    Cliente eliminado correctamente
+                </div>
+            @elseif (null != session('success') && session('success'))
+                <div class="mt-3 alert alert-danger text-center">
+                    Ha ocurrido un error al eliminar al cliente
+                </div>
+            @endif
             <div class="card-body">
                 <table id='Tabla1' class="table table-striped">
                     <thead>
@@ -23,8 +32,18 @@
                                 <td>{{ $c->rut }}</td>
                                 <td>{{ $c->contacto }}</td>
                                 <td>{{ $c->correo }}</td>
-                                <td>
-                                    <a href='/actualizarCliente/idCliente={{ $c->id }}' class="btn btn-dark">Editar</a>
+                                <td><form method="post" action="{{route('borrarCliente',$c->id)}}">
+                                    @csrf
+                                    <div class="text-center">
+                                        <input type="hidden" name="_method" value="DELETE"/>
+                                        <a href='/actualizarCliente/idCliente={{ $c->id }}' class="btn btn-warning"
+                                            style="--bs-btn-font-size: .45rem;"><i class="bi bi-pencil-square"
+                                                style="font-size: 2em;"></i></a>
+                                        <button onclick="return confirm('¿Está seguro que desea eliminar el registro?')" class="btn btn-danger" style="--bs-btn-font-size: .45rem;"><i
+                                                class="bi bi-x-circle" style="font-size: 2em;"></i></button>
+
+                                        {{-- <a href='/actualizarCliente/idCliente={{ $c->id }}' class="btn btn-dark">Editar</a> --}}
+                                    </div></form>
                                 </td>
                             </tr>
                         @endforeach
